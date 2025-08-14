@@ -195,6 +195,7 @@ Version: 1.0
 	outline: 0;
 }
 
+
 .navbar-toggle .icon-bar {
 	display: block;
 	width: 22px;
@@ -497,9 +498,7 @@ nav.navbar.validnavs.bg-dark .collapse-header .navbar-toggle i {
 	color: var(--color-heading);
 }
 
-nav.navbar.validnavs .navbar-toggle i {
-	font-weight: 300;
-}
+
 
 .bg-dark nav.navbar.validnavs .navbar-toggle i {
 	color: var(--white);
@@ -2826,7 +2825,7 @@ nav.navbar.validnavs .navbar-collapse.collapse button {
 }
 
 nav.navbar.validnavs .navbar-collapse.collapse button i {
-	font-weight: 400;
+
 	font-size: 15px;
 }
 

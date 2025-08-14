@@ -36,11 +36,12 @@ function Header() {
           {/* Navbar Header */}
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" onClick={toggleMenu}>
-              <i className="fa fa-bars"></i>
+              <i className="fas fa-bars"></i>
             </button>
             <a className="navbar-brand" href="/">
-              <img className='' src="/assets/img/logo.png" alt="Logo" />
-              {/* <img src="/assets/img/logo-light.png" alt="Logo Light" /> */}
+
+              <img className='' src="/assets/img/logo-light.png" class="logo logo-display" alt="Logo" />
+              <img className='' src="/assets/img/logo.png" class="logo logo-scrolled" alt="Logo"></img>
             </a>
           </div>
 
@@ -48,7 +49,7 @@ function Header() {
           <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbar-menu">
             {/*<img src="/assets/img/logo.png" alt="Logo" />*/}
             <button type="button" className="navbar-toggle" onClick={toggleMenu}>
-              <i className="fa fa-times"></i>
+              <i className="fa-solid fa-xmark"></i>
             </button>
 
             <ul className="nav navbar-nav navbar-center" >
@@ -127,7 +128,7 @@ function Header() {
           {/* Side Panel */}
           <div className={`side ${sideMenuOpen ? 'open' : ''}`}>
             <a href="#" className="close-side" onClick={(e) => { e.preventDefault(); toggleSideMenu(); }}>
-              <i className="fas fa-times"></i>
+              <i className="fa-solid fa-xmark"></i>
             </a>
             <div className="widget">
               <div className="logo">
