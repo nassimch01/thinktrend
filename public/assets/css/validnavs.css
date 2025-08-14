@@ -92,6 +92,11 @@ Version: 1.0
 	box-shadow: var(--box-shadow-secondary);
 }
 
+.navbar-nav .dropdown-menu {
+	display: block;
+}
+
+
 .navbar .navbar-collapse.collapse {
 	display: block !important;
 	float: left;

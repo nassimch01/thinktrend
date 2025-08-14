@@ -3,26 +3,31 @@ import React, { useState } from 'react';
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isHomeOpen, setIsHomeOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isBlogOpen, setIsBlogOpen] = useState(false);
+
+
 
   const toggleMenu = () => {
     setMenuOpen(prev => !prev);
   };
   const openHomeMenu = (e) => {
     e.preventDefault()
-    setIsOpen(prev => !prev);
+    setIsHomeOpen(prev => !prev);
   };
   const openCompanyMenu = (e) => {
     e.preventDefault()
-    setIsOpen(prev => !prev);
+    setIsCompanyOpen(prev => !prev);
   };
   const openServicesMenu = (e) => {
     e.preventDefault()
-    setIsOpen(prev => !prev);
+    setIsServicesOpen(prev => !prev);
   };
   const openBlogMenu = (e) => {
     e.preventDefault()
-    setIsOpen(prev => !prev);
+    setIsBlogOpen(prev => !prev);
   };
 
   const toggleSideMenu = () => {
@@ -47,17 +52,18 @@ function Header() {
 
           {/* Navigation Menu */}
           <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbar-menu">
-            {/*<img src="/assets/img/logo.png" alt="Logo" />*/}
             <button type="button" className="navbar-toggle" onClick={toggleMenu}>
               <i className="fa-solid fa-xmark"></i>
             </button>
 
             <ul className="nav navbar-nav navbar-center" >
               {/* Repeat for each nav item */}
-              <li className="dropdown">
+              <li className="dropdown"
+                onMouseEnter={() => setIsHomeOpen(true)}
+                onMouseLeave={() => setIsHomeOpen(false)}>
                 <a href="#" onClick={openHomeMenu} >Home <i className="fa-solid fa-chevron-down"></i></a>
-                {isOpen && (
-                  <ul className="dropdown-menu">
+                {isHomeOpen && (
+                  <ul className={`dropdown-menu ${isHomeOpen ? 'show' : ''}`}>
                     <li><a href="index.html">Home Version One</a></li>
                     <li><a href="index-2.html">Home Version Two</a></li>
                     <li><a href="index-3.html">Home Version Three</a></li>
@@ -67,43 +73,52 @@ function Header() {
                 )}
               </li>
 
-              <li className="dropdown">
+              <li className="dropdown"
+                onMouseEnter={() => setIsCompanyOpen(true)}
+                onMouseLeave={() => setIsCompanyOpen(false)}>
                 <a href="#" onClick={openCompanyMenu}>Company <i className="fa-solid fa-chevron-down"></i> </a>
-                <ul className="dropdown-menu">
-                  <li><a href="about-us.html">About Company</a></li>
-                  <li><a href="team.html">Meet Our Team</a></li>
-                  <li><a href="team-carousel.html">Team Carousel</a></li>
-                  <li><a href="contact.html">Get in Touch</a></li>
-                  <li><a href="process.html">Our Process</a></li>
-                  <li><a href="faq.html">Faq</a></li>
-                  <li><a href="login.html">Login</a></li>
-                  <li><a href="register.html">Register</a></li>
-                  <li><a href="404.html">Error Page</a></li>
-                </ul>
+                {isCompanyOpen &&
+                  (<ul className="dropdown-menu">
+                    <li><a href="about-us.html">About Company</a></li>
+                    <li><a href="team.html">Meet Our Team</a></li>
+                    <li><a href="team-carousel.html">Team Carousel</a></li>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li><a href="process.html">Our Process</a></li>
+                    <li><a href="faq.html">Faq</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="404.html">Error Page</a></li>
+                  </ul>)}
               </li>
 
-              <li className="dropdown">
+              <li className="dropdown"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}>
                 <a href="#" onClick={openServicesMenu}>Services <i className="fa-solid fa-chevron-down"></i></a>
-                <ul className="dropdown-menu">
-                  <li><a href="services.html">Services Version One</a></li>
-                  <li><a href="services-2.html">Services Version Two</a></li>
-                  <li><a href="services-3.html">Services Version Three</a></li>
-                  <li><a href="services-4.html">Services Version Four</a></li>
-                </ul>
+                {isServicesOpen &&
+                  (<ul className="dropdown-menu">
+                    <li><a href="services.html">Services Version One</a></li>
+                    <li><a href="services-2.html">Services Version Two</a></li>
+                    <li><a href="services-3.html">Services Version Three</a></li>
+                    <li><a href="services-4.html">Services Version Four</a></li>
+                  </ul>)}
               </li>
 
               <li><a href="case-studies.html">Case Studies</a></li>
 
-              <li className="dropdown">
+              <li className="dropdown"
+                onMouseEnter={() => setIsBlogOpen(true)}
+                onMouseLeave={() => setIsBlogOpen(false)}>
                 <a href="#" onClick={openBlogMenu}>Blog <i className="fa-solid fa-chevron-down"></i></a>
-                <ul className="dropdown-menu">
-                  <li><a href="blog-standard.html">Blog Standard</a></li>
-                  <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
-                  <li><a href="blog-2-colum.html">Blog Grid Two Colum</a></li>
-                  <li><a href="blog-3-colum.html">Blog Grid Three Colum</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                  <li><a href="blog-single-with-sidebar.html">Blog Single With Sidebar</a></li>
-                </ul>
+                {isBlogOpen &&
+                  (<ul className="dropdown-menu">
+                    <li><a href="blog-standard.html">Blog Standard</a></li>
+                    <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
+                    <li><a href="blog-2-colum.html">Blog Grid Two Colum</a></li>
+                    <li><a href="blog-3-colum.html">Blog Grid Three Colum</a></li>
+                    <li><a href="blog-single.html">Blog Single</a></li>
+                    <li><a href="blog-single-with-sidebar.html">Blog Single With Sidebar</a></li>
+                  </ul>)}
               </li>
 
               <li><a href="contact.html">Contact</a></li>
