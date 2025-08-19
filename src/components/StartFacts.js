@@ -1,6 +1,6 @@
 import React from 'react'
 
-function StartFaq() {
+function StartFacts() {
     return (
         <div>
             <div className="faq-area default-padding-bottom">
@@ -72,4 +72,4 @@ function StartFaq() {
     )
 }
 
-export default StartFaq;
+export default StartFacts;

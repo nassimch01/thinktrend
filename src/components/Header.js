@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +32,8 @@ function Header() {
     setIsBlogOpen(prev => !prev);
   };
 
-  const toggleSideMenu = () => {
+  const toggleSideMenu = (e) => {
+    e.preventDefault()
     setSideMenuOpen(prev => !prev);
   };
 
@@ -61,7 +64,7 @@ function Header() {
               <li className="dropdown"
                 onMouseEnter={() => setIsHomeOpen(true)}
                 onMouseLeave={() => setIsHomeOpen(false)}>
-                <a href="#" onClick={openHomeMenu} >Home <i className="fa-solid fa-chevron-down"></i></a>
+                <a href="#" onClick={openHomeMenu} >Accueil <i className="fa-solid fa-chevron-down"></i></a>
                 {isHomeOpen && (
                   <ul className={`dropdown-menu ${isHomeOpen ? 'show' : ''}`}>
                     <li><a href="index.html">Home Version One</a></li>
@@ -76,17 +79,17 @@ function Header() {
               <li className="dropdown"
                 onMouseEnter={() => setIsCompanyOpen(true)}
                 onMouseLeave={() => setIsCompanyOpen(false)}>
-                <a href="#" onClick={openCompanyMenu}>Company <i className="fa-solid fa-chevron-down"></i> </a>
+                <a href="#" onClick={openCompanyMenu}>Notre Agence <i className="fa-solid fa-chevron-down"></i> </a>
                 {isCompanyOpen &&
                   (<ul className="dropdown-menu">
-                    <li><a href="about-us.html">About Company</a></li>
+                    <li><Link to="/about-company">A propos de nous </Link></li>
                     <li><a href="team.html">Meet Our Team</a></li>
                     <li><a href="team-carousel.html">Team Carousel</a></li>
                     <li><a href="contact.html">Get in Touch</a></li>
                     <li><a href="process.html">Our Process</a></li>
                     <li><a href="faq.html">Faq</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/register">Register</Link></li>
                     <li><a href="404.html">Error Page</a></li>
                   </ul>)}
               </li>
@@ -104,7 +107,7 @@ function Header() {
                   </ul>)}
               </li>
 
-              <li><a href="case-studies.html">Case Studies</a></li>
+
 
               <li className="dropdown"
                 onMouseEnter={() => setIsBlogOpen(true)}
@@ -130,7 +133,7 @@ function Header() {
             <div className="attr-nav">
               <ul>
                 <li className="side-menu">
-                  <a href="#" onClick={(e) => { e.preventDefault(); toggleSideMenu(); }}>
+                  <a href="#" onClick={toggleSideMenu}>
                     <span className="bar-1"></span>
                     <span className="bar-2"></span>
                     <span className="bar-3"></span>
@@ -141,9 +144,9 @@ function Header() {
           </div>
 
           {/* Side Panel */}
-          <div className={`side ${sideMenuOpen ? 'open' : ''}`}>
-            <a href="#" className="close-side" onClick={(e) => { e.preventDefault(); toggleSideMenu(); }}>
-              <i className="fa-solid fa-xmark"></i>
+          <div className={`side ${sideMenuOpen ? 'on' : ''}`}>
+            <a href="#" className="close-side" onClick={toggleSideMenu}>
+              <i className="fas fa-times"></i>
             </a>
             <div className="widget">
               <div className="logo">
@@ -159,19 +162,20 @@ function Header() {
                 <li>
                   <div className="content">
                     <p>Address</p>
-                    <strong>California, TX 70240</strong>
+                    <strong>Nabeul, Dar Chaabane Elfehri, 8011</strong>
                   </div>
                 </li>
                 <li>
                   <div className="content">
                     <p>Email</p>
-                    <strong>support@validtheme.com</strong>
+                    <strong>info.thinktrend@gmail.com</strong>
                   </div>
                 </li>
                 <li>
                   <div className="content">
                     <p>Contact</p>
-                    <strong>+44-20-7328-4499</strong>
+                    <strong>+216 90-412-026</strong>
+
                   </div>
                 </li>
               </ul>
@@ -194,9 +198,9 @@ function Header() {
             <div className="widget social">
               <ul className="link">
                 <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i className="fab fa-instagram"></i></a></li>
                 <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i className="fab fa-behance"></i></a></li>
+                <li><a href="#"><i className="fab fa-twitter"></i></a></li>
               </ul>
             </div>
           </div>

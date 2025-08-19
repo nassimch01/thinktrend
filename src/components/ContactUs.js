@@ -10,18 +10,18 @@ function ContactUs() {
                         <div className="col-lg-4 address text-light">
                             <div className="address-items wow fadeInUp">
                                 <div className="item">
-                                    <h4>Office Location</h4>
+                                    <h4>Adresse</h4>
                                     <div className="info">
-                                        <p>22 Baker Street,<br /> London, United Kingdom,<br /> W1U 3BW</p>
+                                        <p>Rue de Sousse, Dar Chaabane Elfehri <br />Nabeul, Tunisia,  <br />8011 </p>
                                     </div>
                                 </div>
                                 <div className="item">
                                     <h4>Contact Info</h4>
                                     <div className="info">
                                         <ul>
-                                            <li>Phone: <span>+44-20-7328-4499</span></li>
-                                            <li>Fax: <span>+44-20-7328-4499</span></li>
-                                            <li>Email: <span>info@digilab.com</span></li>
+                                            <li>Phone: <span>+216 90-412-026</span></li>
+
+                                            <li>Email: <span>info.thinktrend@gmail.com</span></li>
                                         </ul>
                                     </div>
                                 </div>
