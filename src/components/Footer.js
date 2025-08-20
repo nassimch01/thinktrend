@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import Blog from './Blog';
 
 function Footer() {
     return (
@@ -44,10 +46,10 @@ function Footer() {
                                     <h4 className="widget-title">Company</h4>
                                     <ul>
                                         <li>
-                                            <a href="#">Home</a>
+                                            <Link to="/">home </Link>
                                         </li>
                                         <li>
-                                            <a href="#">About us</a>
+                                            <Link to="/about-company"> AboutCompany </Link>
                                         </li>
                                         <li>
                                             <a href="#">Compnay History</a>
@@ -56,7 +58,7 @@ function Footer() {
                                             <a href="#">Features</a>
                                         </li>
                                         <li>
-                                            <a href="#">Blog Page</a>
+                                            <Link to="/blog"> BLOG </Link>
                                         </li>
                                     </ul>
                                 </div>

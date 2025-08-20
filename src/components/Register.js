@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Register() {
     return (
@@ -50,7 +51,7 @@ function Register() {
                                         </form>
                                         <div className="sign-up">
                                             <p>
-                                                Already have an account?? <a href="login.html">Login Now</a>
+                                                Already have an account??  <li><Link to="/login">Login</Link></li>
                                             </p>
                                         </div>
                                         <div className="social-login">
@@ -62,9 +63,9 @@ function Register() {
                                                     </a>
                                                 </li>
                                                 <li className="twitter">
-                                                    <a href="#">
-                                                        <i className="fab fa-twitter"></i>
-                                                    </a>
+                                                    <Link to="/https://x.com/"><i className="fab fa-twitter"></i></Link>
+
+
                                                 </li>
                                                 <li className="g-plus">
                                                     <a href="#">

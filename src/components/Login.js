@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Login() {
     return (
@@ -43,7 +44,7 @@ function Login() {
                                         </form>
                                         <div className="sign-up">
                                             <p>
-                                                Don't have an account? <a href="register.html">Sign up now</a>
+                                                Don't have an account? <li><Link to="/register"> register</Link> Sign up now</li>
                                             </p>
                                         </div>
                                         <div className="social-login">
