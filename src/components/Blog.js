@@ -9,32 +9,7 @@ function Blog() {
 
 
 
-            <div className="top-bar-area bg-dark text-light">
-                <div className="container">
-                    <div className="row align-center">
-                        <div className="col-lg-8 address-info">
-                            <div className="info box">
-                                <ul>
-                                    <li>
-                                        <i className="fas fa-map-marker-alt"></i> California, TX 70240
-                                    </li>
-                                    <li>
-                                        <i className="fas fa-envelope-open"></i> Info@gmail.com
-                                    </li>
-                                    <li>
-                                        <i className="fas fa-phone"></i> +123 456 7890
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 text-end button">
-                            <div className="item-flex">
-                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div className="breadcrumb-area bg-gradient text-center">
                 <div className="fixed-bg" style={{ backgroundImage: "url('assets/img/shape/bg-4.png')" }}></div>
                 <div className="container">

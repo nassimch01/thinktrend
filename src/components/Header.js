@@ -1,23 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
-  const [isHomeOpen, setIsHomeOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isBlogOpen, setIsBlogOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+  const [visible, setVisible] = useState(true);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      if (currentScrollPos > prevScrollPos && currentScrollPos > 50) {
+        // Scrolling down
+        setVisible(false);
+      } else {
+        // Scrolling up
+        setVisible(true);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
 
 
   const toggleMenu = () => {
     setMenuOpen(prev => !prev);
   };
-  const openHomeMenu = (e) => {
-    e.preventDefault()
-    setIsHomeOpen(prev => !prev);
+  const handleClick = () => {
+    // Action personnalisée ici
+    console.log('Lien cliqué');
+    // Par exemple, fermer un menu mobile ou réinitialiser un état
   };
   const openCompanyMenu = (e) => {
     e.preventDefault()
@@ -27,10 +46,7 @@ function Header() {
     e.preventDefault()
     setIsServicesOpen(prev => !prev);
   };
-  const openBlogMenu = (e) => {
-    e.preventDefault()
-    setIsBlogOpen(prev => !prev);
-  };
+
 
   const toggleSideMenu = (e) => {
     e.preventDefault()
@@ -61,16 +77,12 @@ function Header() {
 
             <ul className="nav navbar-nav navbar-center" >
               {/* Repeat for each nav item */}
-              <li className="dropdown"
-                onMouseEnter={() => setIsHomeOpen(true)}
-                onMouseLeave={() => setIsHomeOpen(false)}>
-                <a href="#" onClick={openHomeMenu} >Accueil <i className="fa-solid fa-chevron-down"></i></a>
-                {isHomeOpen && (
-                  <ul className={`dropdown-menu ${isHomeOpen ? 'show' : ''}`}>
-                    <li><a href="index.html">Home Version One</a></li>
+              <li >
 
-                  </ul>
-                )}
+                <Link to="/" onClick={handleClick}>
+                  Accueil
+                </Link>
+
               </li>
 
               <li className="dropdown"
@@ -81,8 +93,7 @@ function Header() {
                   (<ul className="dropdown-menu">
                     <li><Link to="/about-company">A propos de nous </Link></li>
                     <li><Link to="/process">Notre Procédure</Link></li>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/register">Register</Link></li>
+
                   </ul>)}
               </li>
 
@@ -99,18 +110,12 @@ function Header() {
 
 
 
-              <li className="dropdown"
-                onMouseEnter={() => setIsBlogOpen(true)}
-                onMouseLeave={() => setIsBlogOpen(false)}>
-                <a href="#" onClick={openBlogMenu}>Blog <i className="fa-solid fa-chevron-down"></i></a>
-                {isBlogOpen &&
-                  (<ul className="dropdown-menu">
-                    <li><Link to="/blog">Notre Blog</Link></li>
+              <li><Link to="/blog">BLOG</Link></li>
 
-                  </ul>)}
-              </li>
 
               <li><Link to="/contact-us">Contact </Link></li>
+              <li><Link to="/login">Login</Link></li>
+
             </ul>
           </div>
 

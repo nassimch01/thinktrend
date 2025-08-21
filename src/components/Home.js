@@ -4,6 +4,8 @@ import AboutUs from './AboutUs'
 import ServicesArea from './ServicesArea'
 import CaseStudies from './CaseStudies'
 import Contact from './Contact'
+import ContactUs from './ContactUs'
+
 
 function Home() {
     return (
@@ -12,7 +14,8 @@ function Home() {
             <AboutUs />
             <ServicesArea />
             <CaseStudies />
-            <Contact />
+            < ContactUs />
+
         </div>
     )
 }

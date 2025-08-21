@@ -5,32 +5,7 @@ function Process() {
     return (
         <div>
 
-            <div className="top-bar-area bg-dark text-light">
-                <div className="container">
-                    <div className="row align-center">
-                        <div className="col-lg-8 address-info">
-                            <div className="info box">
-                                <ul>
-                                    <li>
-                                        <i className="fas fa-map-marker-alt"></i>Nabeul, Dar Chaabane Elfehri, 8011
-                                    </li>
-                                    <li>
-                                        <i className="fas fa-envelope-open"></i> info.thinktrend@gmail.com
-                                    </li>
-                                    <li>
-                                        <i className="fas fa-phone"></i> +216 90-412-026
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 text-end button">
-                            <div className="item-flex">
-                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
 
             <div className="breadcrumb-area bg-gradient text-center">

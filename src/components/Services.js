@@ -1,36 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Services() {
+    const [shift, setShift] = useState(0);
+
+    // number of items * item width (including marginRight)
+    const itemWidth = 411; // 381 + 30 margin
+    const totalItems = 10; // adjust based on your content
+    const visibleItems = 3; // how many are visible at once
+    const maxShift = -(itemWidth * (totalItems - visibleItems));
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShift((prev) => {
+                const next = prev - itemWidth;
+                return next < maxShift ? 0 : next; // reset to start if reached end
+            });
+        }, 5000); // every 60s
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div>
 
-            <div className="top-bar-area bg-dark text-light">
-                <div className="container">
-                    <div className="row align-center">
-                        <div className="col-lg-8 address-info">
-                            <div className="info box">
-                                <ul>
-                                    <li>
-                                        <i className="fas fa-map-marker-alt"></i> California, TX 70240
-                                    </li>
-                                    <li>
-                                        <i className="fas fa-envelope-open"></i> Info@gmail.com
-                                    </li>
-                                    <li>
-                                        <i className="fas fa-phone"></i> +123 456 7890
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 text-end button">
-                            <div className="item-flex">
-                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
 
 
@@ -62,83 +57,368 @@ function Services() {
                 </div>
 
                 <div className="container">
-                    <div className="services-items wow fadeInUp services-carousel owl-carousel owl-theme">
-
-                        <div className="item">
-                            <div className="icon">
-                                <i className="flaticon-bullhorn"></i>
-                            </div>
-                            <div className="info">
-                                <h4>
-                                    <a href="#">Social Media Marketing</a>
-                                </h4>
-                                <p>
-                                    Except had sex limits county enough the figure former add. Do sang my he next mr soon. It merely waited do unable.
-                                </p>
-                                <a href="#"><i className="fas fa-arrow-right"></i> Read More</a>
+                    <div
+                        className='services-items wow fadeInUp services-stage-carousel owl-carousel owl-theme text-center owl-loaded owl-drag'
+                    >
+                        <div className='owl-stage-outer'>
+                            <div
+                                className='owl-stage'
+                                style={{
+                                    transform: `translate3d(${shift}px, 0px, 0px)`,
+                                    transition: "transform 0.75s ease", // smooth slide
+                                    width: '4725px',
+                                    paddingLeft: '100px',
+                                    paddingRight: '100px',
+                                }}
+                            >
+                                <div
+                                    className='owl-item cloned'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-marketing'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Content Marketing
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item cloned'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-ppc'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>PPC Advertising</a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item cloned'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-competition'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Competitor Research
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item active'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-bullhorn'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Social Media Marketing
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item active'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-keyword-1'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>Keyward Research</a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item active'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-marketing'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Content Marketing
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-ppc'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>PPC Advertising</a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-competition'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Competitor Research
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item cloned'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-bullhorn'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Social Media Marketing
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item cloned'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-keyword-1'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>Keyward Research</a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className='owl-item cloned'
+                                    style={{
+                                        width: '381.333px',
+                                        marginRight: '30px',
+                                    }}
+                                >
+                                    <div className='item'>
+                                        <div className='icon'>
+                                            <i className='flaticon-marketing'></i>
+                                        </div>
+                                        <div className='info'>
+                                            <h4>
+                                                <a href='#'>
+                                                    Content Marketing
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Except had sex limits county
+                                                enough the figure former add. Do
+                                                sang my he next mr soon. It
+                                                merely waited do unable.
+                                            </p>
+                                            <a href='#'>
+                                                <i className='fas fa-arrow-right'></i>{' '}
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="item">
-                            <div className="icon">
-                                <i className="flaticon-keyword-1"></i>
-                            </div>
-                            <div className="info">
-                                <h4>
-                                    <a href="#">Keyward Research</a>
-                                </h4>
-                                <p>
-                                    Except had sex limits county enough the figure former add. Do sang my he next mr soon. It merely waited do unable.
-                                </p>
-                                <a href="#"><i className="fas fa-arrow-right"></i> Read More</a>
-                            </div>
+                        <div className='owl-nav disabled'>
+                            <button
+                                type='button'
+                                role='presentation'
+                                className='owl-prev'
+                            >
+                                <i className='fa fa-angle-left'></i>
+                            </button>
+                            <button
+                                type='button'
+                                role='presentation'
+                                className='owl-next'
+                            >
+                                <i className='fa fa-angle-right'></i>
+                            </button>
                         </div>
-
-                        <div className="item">
-                            <div className="icon">
-                                <i className="flaticon-marketing"></i>
-                            </div>
-                            <div className="info">
-                                <h4>
-                                    <a href="#">Content Marketing</a>
-                                </h4>
-                                <p>
-                                    Except had sex limits county enough the figure former add. Do sang my he next mr soon. It merely waited do unable.
-                                </p>
-                                <a href="#"><i className="fas fa-arrow-right"></i> Read More</a>
-                            </div>
+                        <div className='owl-dots'>
+                            <button role='button' className='owl-dot active' onClick={() => setShift(shift - 400)}>
+                                <span></span>
+                            </button>
+                            <button role='button' className='owl-dot' onClick={() => setShift(shift + 400)}>
+                                <span></span>
+                            </button>
                         </div>
-
-                        <div className="item">
-                            <div className="icon">
-                                <i className="flaticon-ppc"></i>
-                            </div>
-                            <div className="info">
-                                <h4>
-                                    <a href="#">PPC Advertising</a>
-                                </h4>
-                                <p>
-                                    Except had sex limits county enough the figure former add. Do sang my he next mr soon. It merely waited do unable.
-                                </p>
-                                <a href="#"><i className="fas fa-arrow-right"></i> Read More</a>
-                            </div>
-                        </div>
-
-                        <div className="item">
-                            <div className="icon">
-                                <i className="flaticon-competition"></i>
-                            </div>
-                            <div className="info">
-                                <h4>
-                                    <a href="#">Competitor Research</a>
-                                </h4>
-                                <p>
-                                    Except had sex limits county enough the figure former add. Do sang my he next mr soon. It merely waited do unable.
-                                </p>
-                                <a href="#"><i className="fas fa-arrow-right"></i> Read More</a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -314,53 +594,8 @@ function Services() {
                 </div>
             </div>
 
-            <div className="testimonials-area default-padding"></div>
-            <div className="container">
-                <div className="testimonial-items">
-                    <div className="row align-center">
-                        <div className="col-lg-5 wow fadeInUp">
-                            <div className="client-thumb">
-                                <img src="assets/img/team/1.jpg" alt="Thumb" />
-                                <img src="assets/img/team/2.jpg" alt="Thumb" />
-                                <img src="assets/img/team/3.jpg" alt="Thumb" />
-                                <img src="assets/img/team/7.jpg" alt="Thumb" />
-                            </div>
-                        </div>
-                        <div className="col-lg-6 wow fadeInLeft offset-lg-1 testimonial-content">
-                            <div className="heading">
-                                <h2 className="title">What people say <br /> About our Services</h2>
-                            </div>
-                            <div className="testimonials-carousel owl-carousel owl-theme">
 
-                                <div className="item">
-                                    <p>
-                                        Tried known to as my to. Though wished merits or be. Alone visit use these smart rooms ham. No waiting in on enjoyed placing it inquiry. Tried known to as my to. Though wished merits or be. Alone visit use these smart.
-                                    </p>
-                                    <div className="author">
-                                        <div className="info">
-                                            <h5>Droila Abhi</h5>
-                                            <span>Marketing manager</span>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="item">
-                                    <p>
-                                        Tried known to as my to. Though wished merits or be. Alone visit use these smart rooms ham. No waiting in on enjoyed placing it inquiry. Tried known to as my to. Though wished merits or be. Alone visit use these smart.
-                                    </p>
-                                    <div className="author">
-                                        <div className="info">
-                                            <h5>Droila Abhi</h5>
-                                            <span>Marketing manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
 
