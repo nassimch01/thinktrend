@@ -1573,13 +1573,9 @@ nav.navbar.validnavs.brand-center {
 
 	nav.navbar.validnavs.menu-center .container {
 		position: relative;
+		margin-top: 25px;
 	}
 
-	nav.navbar.navbar-fixed-white .container {
-		position: relative;
-		z-index: 1;
-		padding: 10px 15px;
-	}
 
 	nav.navbar.navbar-fixed-white .container::after {
 		position: absolute;
@@ -2022,6 +2018,7 @@ nav.navbar.validnavs.brand-center {
 
 	nav.navbar.validnavs.brand-center .logo-display {
 		display: none;
+
 	}
 
 	header.adjust-height {

@@ -27,14 +27,11 @@ function AboutCompany() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-4 text-end button">
-                            <div className="item-flex">
-                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
+
 
 
 
@@ -158,34 +155,7 @@ function AboutCompany() {
 
 
 
-            <div className="clients-area bg-gray default-padding">
-                <div className="container">
-                    <div className="row align-center">
-                        <div className="col-lg-5 info">
-                            <h2>We've Worked With Them, <strong> Now Trust Each</strong> Other</h2>
-                        </div>
-                        <div className="col-lg-7">
-                            <div className="clients-carousel owl-carousel owl-theme">
-                                <div className="item">
-                                    <img src="assets/img/clients/1.png" alt="Thumb" />
-                                </div>
-                                <div className="item">
-                                    <img src="assets/img/clients/2.png" alt="Thumb" />
-                                </div>
-                                <div className="item">
-                                    <img src="assets/img/clients/3.png" alt="Thumb" />
-                                </div>
-                                <div className="item">
-                                    <img src="assets/img/clients/4.png" alt="Thumb" />
-                                </div>
-                                <div className="item">
-                                    <img src="assets/img/clients/5.png" alt="Thumb" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
             <div className="choose-us-area default-padding-bottom bg-gray">
                 <div className="container">

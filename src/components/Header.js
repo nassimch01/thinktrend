@@ -97,7 +97,9 @@ function Header() {
                 {isCompanyOpen &&
                   (<ul className="dropdown-menu">
                     <li><Link to="/about-company">A propos de nous </Link></li>
-                    <li><Link to="/process">Notre Procédure</Link></li>
+                    <li><Link to="/process">Procédure</Link></li>
+                    <li><Link to="/partenaires"> Partenaires</Link></li>
+                    <li><Link to="/applications">Applications</Link></li>
 
                   </ul>)}
               </li>

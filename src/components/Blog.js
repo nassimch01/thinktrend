@@ -26,14 +26,11 @@ function Blog() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-4 text-end button">
-                            <div className="item-flex">
-                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
+
 
 
 

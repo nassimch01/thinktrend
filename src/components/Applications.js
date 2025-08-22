@@ -1,17 +1,12 @@
 import React from 'react'
-import Banner from './Banner'
-import AboutUs from './AboutUs'
-import ServicesArea from './ServicesArea'
-import CaseStudies from './CaseStudies'
-import ContactUs from './ContactUs'
 import Header from './Header'
 import Footer from './Footer'
-import StartFacts from './StartFacts'
+import { Link } from 'react-router-dom'
 
-
-function Home() {
+function Applications() {
     return (
         <div>
+            <Header />
             <div className="top-bar-area bg-dark text-light">
                 <div className="container">
                     <div className="row align-center">
@@ -35,17 +30,30 @@ function Home() {
                 </div>
             </div>
 
-            <Header />
-            <Banner />
-            <AboutUs />
-            <ServicesArea />
-            <StartFacts />
-            <CaseStudies />
-            <ContactUs />
-            <Footer />
 
+            <div className="breadcrumb-area bg-gradient text-center">
+
+                <div className="fixed-bg" style={{ backgroundImage: "url('assets/img/shape/bg-4.png')" }}></div>
+
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 offset-lg-2">
+                            <h1>Applications</h1>
+                            <ul className="breadcrumb">
+                                <Link to="/"><i className="fas fa-home"></i>home </Link>
+
+                                <li className="active">Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Footer />
         </div>
+
     )
 }
 
-export default Home;
+export default Applications;

@@ -10,6 +10,8 @@ import Process from './components/Process';
 import Blog from './components/Blog';
 import Services from './components/Services';
 import Contact from './components/Contact';
+import Partenaires from './components/Partenaires';
+import Applications from './components/Applications';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/process" element={<Process />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/partenaires" element={<Partenaires />} />
+        <Route path="/applications" element={<Applications />} />
 
 
       </Routes>
