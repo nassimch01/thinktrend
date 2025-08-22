@@ -1,8 +1,12 @@
 import React from 'react'
 
+
+
 function ContactUs() {
     return (
         <div>
+
+
             <div id="contact" className="contact-us-area default-padding-bottom">
                 <div className="container">
                     <div className="row">
@@ -70,6 +74,7 @@ function ContactUs() {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

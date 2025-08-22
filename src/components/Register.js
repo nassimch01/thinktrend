@@ -55,24 +55,33 @@ function Register() {
                                                 Already have an account??  <li><Link to="/login">Login</Link></li>
                                             </p>
                                         </div>
-                                        <div className="social-login">
+                                        <div class="social-login">
                                             <h5>Or Register With</h5>
                                             <ul>
-                                                <li className="facebook">
-                                                    <a href="#">
-                                                        <i className="fab fa-facebook-f"></i>
+                                                <li class="facebook">
+                                                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                                        <i class="fab fa-facebook-f"></i>
                                                     </a>
-                                                </li>
-                                                <li className="twitter">
-                                                    <Link to="/https://x.com/"><i className="fab fa-twitter"></i></Link>
 
 
                                                 </li>
-                                                <li className="g-plus">
-                                                    <a href="#">
-                                                        <i className="fab fa-google-plus-g"></i>
+                                                <li class="twitter">
+                                                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                                                        <i class="fab fa-twitter"></i>
                                                     </a>
+
+
                                                 </li>
+
+                                                <li class="g-plus">
+                                                    <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Ftakeout.google.com%2F%3Fhl%3Dfr&followup=https%3A%2F%2Ftakeout.google.com%2F%3Fhl%3Dfr&hl=fr&ifkv=AdBytiP28BBMT5kL2f-spALm3H3Li-kTCaOLrxSZub4S4tDbp3jHdr243JWtid9DjcR__1seaSSw8g&osid=1&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S302716681%3A1755776731791194">
+                                                        <i class="fab fa-google-plus-g"></i>
+
+                                                    </a>
+
+
+                                                </li>
+
                                             </ul>
                                         </div>
                                     </div>

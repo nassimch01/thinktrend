@@ -1,13 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 function Contact() {
     return (
         <div>
 
+            <Header />
 
-
-
+            <div className="top-bar-area bg-dark text-light">
+                <div className="container">
+                    <div className="row align-center">
+                        <div className="col-lg-8 address-info">
+                            <div className="info box">
+                                <ul>
+                                    <li>
+                                        <i className="fas fa-map-marker-alt"></i> Nabeul, Dar Chaabane Elfehri, 8011
+                                    </li>
+                                    <li>
+                                        <i className="fas fa-envelope-open"></i> info.thinktrend@gmail.com
+                                    </li>
+                                    <li>
+                                        <i className="fas fa-phone"></i> +216 90-412-026
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 text-end button">
+                            <div className="item-flex">
+                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -22,7 +49,7 @@ function Contact() {
                             <h1>Contact Us</h1>
                             <ul className="breadcrumb">
                                 <Link to="/"><i className="fas fa-home"></i>home </Link>
-                                <li><a href="#">Pages</a></li>
+
                                 <li className="active">Contact</li>
                             </ul>
                         </div>
@@ -103,11 +130,20 @@ function Contact() {
 
             <div className="maps-area">
                 <div className="google-maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14767.262289338461!2d70.79414485000001!3d22.284975!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1424308883981"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3209.0385652687896!2d10.752171274614232!3d36.456624286993595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130299b2ce11e99b%3A0x90144e76cef169e5!2sThink%20Trend!5e0!3m2!1sfr!2stn!4v1755769336666!5m2!1sfr!2stn"
+                        width="600"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Google Map"
+                    ></iframe>
                 </div>
             </div>
 
-
+            <Footer />
 
         </div>
     )

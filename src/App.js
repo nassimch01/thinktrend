@@ -1,6 +1,5 @@
 import { Route, Router, Routes } from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
+
 import Register from './components/Register';
 import Login from './components/Login';
 import './style.css';
@@ -16,7 +15,7 @@ import Contact from './components/Contact';
 function App() {
   return (
     <div className="App">
-      <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -29,7 +28,7 @@ function App() {
 
 
       </Routes>
-      <Footer />
+
 
 
     </div>

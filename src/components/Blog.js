@@ -1,25 +1,52 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 function Blog() {
     return (
         <div>
 
-
-
+            <Header />
+            <div className="top-bar-area bg-dark text-light">
+                <div className="container">
+                    <div className="row align-center">
+                        <div className="col-lg-8 address-info">
+                            <div className="info box">
+                                <ul>
+                                    <li>
+                                        <i className="fas fa-map-marker-alt"></i> Nabeul, Dar Chaabane Elfehri, 8011
+                                    </li>
+                                    <li>
+                                        <i className="fas fa-envelope-open"></i> info.thinktrend@gmail.com
+                                    </li>
+                                    <li>
+                                        <i className="fas fa-phone"></i> +216 90-412-026
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 text-end button">
+                            <div className="item-flex">
+                                <a className="button" href="#"><i className="fas fa-chart-line"></i> Free Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
             <div className="breadcrumb-area bg-gradient text-center">
-                <div className="fixed-bg" style={{ backgroundImage: "url('assets/img/shape/bg-4.png')" }}></div>
+                <div className="fixed-bg" style={{ backgroundImage: "url('assets/img/blog/bg-4.png')" }}></div>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2">
                             <h1>Blog Single</h1>
                             <ul className="breadcrumb">
                                 <Link to="/"><i className="fas fa-home"></i>home </Link>
-                                <li><a href="#">Blog</a></li>
-                                <li className="active">Single</li>
+
+                                <li className="active">Blog</li>
                             </ul>
                         </div>
                     </div>
@@ -410,7 +437,7 @@ function Blog() {
 
 
 
-
+            <Footer />
 
         </div>
     )

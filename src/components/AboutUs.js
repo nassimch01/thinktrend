@@ -1,8 +1,12 @@
 import React from 'react'
+import Footer from './Footer';
+import Header from './Header';
 
 function AboutUs() {
   return (
+
     <div className="about-features-area about-area default-padding">
+
       <div className="container">
         <div className="row align-center">
 
@@ -66,7 +70,9 @@ function AboutUs() {
           </div>
         </div>
       </div>
+
     </div>
+
   )
 }
 

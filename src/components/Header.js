@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import { FaArrowRightLong } from 'react-icons/fa6';
+import { FaTimes } from 'react-icons/fa';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+  const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
+
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-
-      if (currentScrollPos > prevScrollPos && currentScrollPos > 50) {
-        // Scrolling down
-        setVisible(false);
+      if (window.scrollY > 50) {
+        setScrolled(true);
       } else {
-        // Scrolling up
-        setVisible(true);
+        setScrolled(false);
       }
-
-      setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
+  }, []);
 
 
   const toggleMenu = () => {
@@ -55,13 +51,22 @@ function Header() {
 
   return (
     <header className="app-header">
-      <nav className="navbar mobile-sidenav navbar-sticky navbar-default validnavs navbar-fixed white no-background">
+      <nav
+        className={
+          scrolled
+            ? 'navbar mobile-sidenav navbar-sticky navbar-default validnavs navbar-fixed white on menu-center no-full sticked'
+            : 'navbar mobile-sidenav navbar-sticky navbar-default validnavs navbar-fixed white on menu-center no-full no-background'
+        }
+      >
         <div className="container d-flex justify-content-between align-items-center">
           {/* Navbar Header */}
           <div className="navbar-header">
-            <button type="button" className="navbar-toggle" onClick={toggleMenu}>
-              <i className="fas fa-bars"></i>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={toggleMenu}>
+              <i class="fa fa-bars"></i>
             </button>
+
+
             <a className="navbar-brand" href="/">
 
               <img className='' src="/assets/img/logo-light.png" class="logo logo-display" alt="Logo" />
@@ -178,8 +183,8 @@ function Header() {
                 <div className="input-group stylish-input-group">
                   <input type="email" placeholder="Enter your e-mail" className="form-control" name="email" />
                   <span className="input-group-addon">
-                    <button type="submit">
-                      <i className="fas fa-long-arrow-right"></i>
+                    <button>
+                      <FaArrowRightLong />
                     </button>
                   </span>
                 </div>
@@ -188,10 +193,21 @@ function Header() {
 
             <div className="widget social">
               <ul className="link">
-                <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-facebook-f"></i>
+                </a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-instagram"></i>
+                </a></li>
+                <li><a href=" https://fr.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin"></i>
+                </a></li>
+                <li class="twitter">
+                  <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+
               </ul>
             </div>
           </div>
